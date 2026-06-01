@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Editör / araç ayarları
+.claude/
+.vscode/
+.idea/
+
+# Loglar
+*.log

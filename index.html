@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayça Takı — El Yapımı Gümüş Takılar</title>
+  <meta name="description" content="Ayça Takı — özenle, elde üretilen gümüş yüzük, kolye, küpe ve bilekliler. Her parça tek ve özel." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Header / Navbar ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Ayça <span>Takı</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#galeri">Galeri</a>
+        <a href="#hakkimda">Hakkımda</a>
+        <a href="#kargo">Kargo</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="#iletisim" class="nav-cta" data-wa data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum.">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">El yapımı · 925 ayar gümüş</p>
+      <h1>Her parça elde,<br />tek ve özel.</h1>
+      <p class="hero-lead">
+        Küçük bir atölyede, sabırla şekillenen gümüş takılar. Yüzükler, kolyeler,
+        küpeler ve bileklikler — sevdiklerinize ya da kendinize.
+      </p>
+      <div class="hero-actions">
+        <a href="#galeri" class="btn btn-primary">Koleksiyonu Gör</a>
+        <a href="#iletisim" class="btn btn-ghost" data-wa data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum.">WhatsApp'tan Yaz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Galeri ===== -->
+  <section class="section" id="galeri">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-eyebrow">Koleksiyon</p>
+        <h2>Galeri</h2>
+        <p class="section-sub">Beğendiğiniz parça için WhatsApp'tan yazın; stok ve fiyat bilgisini paylaşalım.</p>
+      </header>
+
+      <!-- Kategori filtreleri js/main.js'ten üretilir -->
+      <div class="filters" id="filters"></div>
+
+      <!-- Ürünler js/main.js içindeki listeden üretilir -->
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Hakkımda ===== -->
+  <section class="section section-alt" id="hakkimda">
+    <div class="container about-inner">
+      <div class="about-media" aria-hidden="true">
+        <div class="about-photo">
+          <span>Atölye fotoğrafınız<br />buraya gelecek</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow">Merhaba</p>
+        <h2>Atölyeden birkaç söz</h2>
+        <p>
+          Ayça Takı, gümüşe olan tutkumdan doğdu. Her parçayı kendi ellerimle,
+          küçük üretim mantığıyla hazırlıyorum — bu yüzden hiçbiri birbirinin
+          tıpatıp aynısı değil.
+        </p>
+        <p>
+          Sade, gündelik takılabilen ama bir o kadar da anlamlı tasarımlar
+          tasarlamayı seviyorum. Bu metni dilediğiniz gibi düzenleyip, kendi
+          hikâyenizi anlatabilirsiniz.
+        </p>
+        <ul class="about-points">
+          <li>925 ayar gümüş</li>
+          <li>El yapımı, sınırlı sayıda</li>
+          <li>İsteğe özel üretim</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Kargo & Teslimat ===== -->
+  <section class="section" id="kargo">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-eyebrow">Bilgi</p>
+        <h2>Kargo &amp; Teslimat</h2>
+        <p class="section-sub">Aşağıdaki bilgileri kendi koşullarınıza göre düzenleyebilirsiniz.</p>
+      </header>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-ico">📦</span>
+          <strong>Hazırlık süresi</strong>
+          <p>Her parça siparişe özel hazırlanır; kargoya veriliş 2–4 iş günü içindedir.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-ico">🚚</span>
+          <strong>Kargo</strong>
+          <p>Tüm Türkiye'ye anlaşmalı kargo ile gönderim. Kargo ücreti sipariş sırasında belirtilir.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-ico">🎁</span>
+          <strong>Paketleme</strong>
+          <p>Siparişler özel hediye kutusunda, hediyeye uygun şekilde paketlenir.</p>
+        </div>
+        <div class="info-card">
+          <span class="info-ico">↩️</span>
+          <strong>Değişim &amp; iade</strong>
+          <p>Ürün elinize ulaştıktan sonra koşullar için WhatsApp'tan yazabilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Müşteri Yorumları ===== -->
+  <section class="section section-alt" id="yorumlar">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-eyebrow">Mutlu müşteriler</p>
+        <h2>Müşteri Yorumları</h2>
+        <p class="section-sub">Gerçek yorumlarınızı buraya ekleyebilirsiniz.</p>
+      </header>
+
+      <div class="reviews-grid">
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>İşçiliği gerçekten çok özenli, kutusu bile harikaydı. Kendime aldım, bayıldım!</blockquote>
+          <figcaption>— Elif K.</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>Anneme isimli kolye yaptırdım, tam istediğim gibi oldu. Çok teşekkürler.</blockquote>
+          <figcaption>— Merve T.</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>Hızlı iletişim, kaliteli gümüş. Uzun süredir takıyorum, hiç kararmadı.</blockquote>
+          <figcaption>— Zeynep A.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== İletişim ===== -->
+  <section class="section" id="iletisim">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-eyebrow">İletişim</p>
+        <h2>Bize ulaşın</h2>
+        <p class="section-sub">Sipariş, özel tasarım ve sorularınız için en hızlısı WhatsApp.</p>
+      </header>
+
+      <div class="contact-solo">
+        <a class="contact-card" data-wa data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum." href="#">
+          <span class="contact-ico">💬</span>
+          <strong>WhatsApp'tan Yazın</strong>
+          <span class="contact-meta">Sipariş ve sorularınız için en hızlı yol</span>
+          <span class="contact-action">Mesaj Gönder</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="brand">Ayça <span>Takı</span></span>
+      <p>© <span id="year"></span> Ayça Takı · El yapımı gümüş takılar</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
