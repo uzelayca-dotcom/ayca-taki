@@ -242,6 +242,7 @@ img { max-width: 100%; display: block; }
 .product-desc { color: var(--muted); font-size: 0.95rem; margin: 6px 0 14px; flex: 1; }
 .product-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .product-price { font-weight: 700; color: var(--accent-dark); font-size: 1.05rem; }
+.product-price.ask { font-weight: 600; font-size: 0.9rem; color: var(--muted); }
 .product .wa-btn {
   background: var(--accent);
   color: #fff;

@@ -20,17 +20,15 @@ const CATEGORIES = [
 /* ----------------------------------------------------------------
    3) ÜRÜNLER — yeni ürün eklemek için listeye satır ekleyin.
       cat:   yukarıdaki kategorilerden biri (yuzuk/kolye/kupe/bileklik)
+      price: fiyat metni (boş "" bırakılırsa "Fiyat için yazın" gösterilir)
       image: images/ klasöründeki dosya yolu (boşsa yer tutucu ikon)
    ---------------------------------------------------------------- */
 const PRODUCTS = [
-  { name: "İnce Bant Yüzük", cat: "yuzuk",    desc: "Günlük kullanım için sade 925 ayar gümüş yüzük.", price: "₺450", image: "" },
-  { name: "Taşlı Yüzük",     cat: "yuzuk",    desc: "Doğal taş detaylı, gösterişli tek parça.",         price: "₺980", image: "" },
-  { name: "Zincir Kolye",    cat: "kolye",    desc: "Minimal madalyonlu ince gümüş zincir kolye.",      price: "₺780", image: "" },
-  { name: "İsimli Kolye",    cat: "kolye",    desc: "İsteğe özel, el yazısı isimli gümüş kolye.",       price: "₺850", image: "" },
-  { name: "Damla Küpe",      cat: "kupe",     desc: "El işçiliğiyle şekillenmiş zarif damla küpeler.",  price: "₺620", image: "" },
-  { name: "Halka Küpe",      cat: "kupe",     desc: "Hafif ve şık, her kombine uyan halka küpe.",       price: "₺510", image: "" },
-  { name: "Örgü Bileklik",   cat: "bileklik", desc: "Elde örülmüş, ayarlanabilir gümüş bileklik.",      price: "₺540", image: "" },
-  { name: "İnce Halhal",     cat: "bileklik", desc: "Yazlık kombinler için narin gümüş halhal.",        price: "₺470", image: "" },
+  { name: "Yaprak Sarkıtlı Halka Küpe", cat: "kupe",  desc: "Gümüş yaprak sarkıtlı, el yapımı zarif halka küpe.",        price: "₺2.100", image: "images/kupe-yaprak-halka.jpg" },
+  { name: "Güneş Küpe",                 cat: "kupe",  desc: "Işıltılı güneş motifli, hafif sarkıt gümüş küpe.",          price: "₺1.800", image: "images/kupe-gunes.jpg" },
+  { name: "Oymalı Yaprak Küpe",         cat: "kupe",  desc: "Yaprak formunda, oymalı el yapımı gümüş küpe.",             price: "₺1.200", image: "images/kupe-oymali-yaprak.jpg" },
+  { name: "Çınar Yaprağı Küpe",         cat: "kupe",  desc: "925 ayar, dokulu çınar yaprağı formunda el yapımı küpe.",   price: "₺1.800", image: "images/kupe-cinar-yaprak.jpg" },
+  { name: "Taş Mozaik Yaprak Yüzük",    cat: "yuzuk", desc: "Doğal taş mozaik işlemeli, yaprak formunda gümüş yüzük.",   price: "₺1.900", image: "images/yuzuk-yaprak-tas.jpg" },
 ];
 
 /* ----------------------------------------------------------------
@@ -48,9 +46,13 @@ const grid = document.getElementById("galleryGrid");
 if (grid) {
   grid.innerHTML = PRODUCTS.map((p) => {
     const media = p.image
-      ? `<div class="product-img"><img src="${p.image}" alt="${p.name}" loading="lazy" /></div>`
+      ? `<div class="product-img"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.closest('.product-img').textContent='💍'" /></div>`
       : `<div class="product-img">💍</div>`;
-    const msg = `Merhaba! "${p.name}" (${p.price}) ürünüyle ilgileniyorum.`;
+    const hasPrice = p.price && p.price.trim() !== "";
+    const priceText = hasPrice ? p.price : "Fiyat için yazın";
+    const msg = hasPrice
+      ? `Merhaba! "${p.name}" (${p.price}) ürünüyle ilgileniyorum.`
+      : `Merhaba! "${p.name}" ürününü ve fiyatını merak ediyorum.`;
     return `
       <article class="product" data-cat="${p.cat}">
         ${media}
@@ -59,7 +61,7 @@ if (grid) {
           <h3>${p.name}</h3>
           <p class="product-desc">${p.desc}</p>
           <div class="product-foot">
-            <span class="product-price">${p.price}</span>
+            <span class="product-price${hasPrice ? "" : " ask"}">${priceText}</span>
             <a class="wa-btn" target="_blank" rel="noopener" href="${waLink(msg)}">Sipariş İçin Yaz</a>
           </div>
         </div>
@@ -70,7 +72,8 @@ if (grid) {
 // Kategori filtre butonları
 const filters = document.getElementById("filters");
 if (filters) {
-  const buttons = [{ key: "all", label: "Tümü" }, ...CATEGORIES];
+  const usedCats = new Set(PRODUCTS.map((p) => p.cat));
+  const buttons = [{ key: "all", label: "Tümü" }, ...CATEGORIES.filter((c) => usedCats.has(c.key))];
   filters.innerHTML = buttons
     .map((b, i) => `<button class="filter-btn${i === 0 ? " active" : ""}" data-filter="${b.key}">${b.label}</button>`)
     .join("");
