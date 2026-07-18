@@ -24,11 +24,11 @@ const CATEGORIES = [
       image: images/ klasöründeki dosya yolu (boşsa yer tutucu ikon)
    ---------------------------------------------------------------- */
 const PRODUCTS = [
-  { name: "Yaprak Sarkıtlı Halka Küpe", cat: "kupe",  desc: "Gümüş yaprak sarkıtlı, el yapımı zarif halka küpe. Çift olarak satılır.",                     price: "₺2.100", image: "images/kupe-yaprak-halka.jpg" },
-  { name: "Güneş Küpe",                 cat: "kupe",  desc: "Işıltılı güneş motifli, hafif sarkıt gümüş küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun.",       price: "₺900",   image: "images/kupe-gunes.jpg" },
-  { name: "Oymalı Yaprak Küpe",         cat: "kupe",  desc: "Yaprak formunda, oymalı el yapımı gümüş küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun.",           price: "₺600",   image: "images/kupe-oymali-yaprak.jpg" },
-  { name: "Çınar Yaprağı Küpe",         cat: "kupe",  desc: "925 ayar, dokulu çınar yaprağı formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun.", price: "₺900",   image: "images/kupe-cinar-yaprak.jpg" },
-  { name: "Taş Mozaik Yaprak Yüzük",    cat: "yuzuk", desc: "Doğal taş mozaik işlemeli, yaprak formunda gümüş yüzük.",   price: "₺1.900", image: "images/yuzuk-yaprak-tas.jpg" },
+  { name: "Yaprak Sarkıtlı Halka Küpe", cat: "kupe",  desc: "Gümüş yaprak sarkıtlı, el yapımı zarif halka küpe. Çift olarak satılır. Kargo ücreti dahildir.",                     price: "₺2.300", image: "images/kupe-yaprak-halka.jpg" },
+  { name: "Güneş Küpe",                 cat: "kupe",  desc: "Işıltılı güneş motifli, hafif sarkıt gümüş küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",       price: "₺1.100", image: "images/kupe-gunes.jpg" },
+  { name: "Oymalı Yaprak Küpe",         cat: "kupe",  desc: "Yaprak formunda, oymalı el yapımı gümüş küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",           price: "₺800",   image: "images/kupe-oymali-yaprak.jpg" },
+  { name: "Çınar Yaprağı Küpe",         cat: "kupe",  desc: "925 ayar, dokulu çınar yaprağı formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺1.100", image: "images/kupe-cinar-yaprak.jpg" },
+  { name: "Taş Mozaik Yaprak Yüzük",    cat: "yuzuk", desc: "Doğal taş mozaik işlemeli, yaprak formunda gümüş yüzük. Kargo ücreti dahildir.",   price: "₺2.100", image: "images/yuzuk-yaprak-tas.jpg" },
 ];
 
 /* ----------------------------------------------------------------
