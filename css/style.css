@@ -316,6 +316,15 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
 }
+/* Tek yorum: ortalanmış, sınırlı genişlik */
+.reviews-grid.single {
+  grid-template-columns: 1fr;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+.reviews-grid.single .stars { text-align: center; }
+.reviews-grid.single .review blockquote { font-size: 1.12rem; }
 .review {
   background: var(--card);
   border: 1px solid var(--line);
