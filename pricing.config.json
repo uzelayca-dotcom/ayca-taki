@@ -1,0 +1,22 @@
+{
+  "_aciklama": "Otomatik fiyat güncelleme yapılandırması. scripts/update-prices.mjs bunu okur. Fiyat = round50(gramaj × gramGümüşTL × katsayi + kargo). Politika: sadece artış (gümüş düşerse fiyat sabit), tur başına en fazla +%15. Katsayılar 2026-07-19 kuruna (84.84 TL/g) göre kalibre edildi.",
+  "kargo": 200,
+  "yuvarla": 50,
+  "artisTavaniOran": 0.15,
+  "sadeceArtis": true,
+  "gumusKaynak": {
+    "url": "https://finans.truncgil.com/today.json",
+    "anahtar": "gumus",
+    "alan": "Satış",
+    "makulMin": 40,
+    "makulMax": 400
+  },
+  "kalibrasyonGram": 84.84,
+  "urunler": [
+    { "id": "kupe-yaprak-halka", "isim": "Yaprak Sarkıtlı Halka Küpe", "gramaj": 10, "birim": "cift",  "katsayi": 2.4752, "mevcutFiyat": 2300 },
+    { "id": "kupe-gunes",         "isim": "Güneş Küpe",                 "gramaj": 4,  "birim": "tek",   "katsayi": 2.6521, "mevcutFiyat": 1100 },
+    { "id": "kupe-oymali-yaprak", "isim": "Oymalı Yaprak Küpe",         "gramaj": 2,  "birim": "tek",   "katsayi": 3.5361, "mevcutFiyat": 800 },
+    { "id": "kupe-cinar-yaprak",  "isim": "Çınar Yaprağı Küpe",         "gramaj": 4,  "birim": "tek",   "katsayi": 2.6521, "mevcutFiyat": 1100 },
+    { "id": "yuzuk-yaprak-tas",   "isim": "Taş Mozaik Yaprak Yüzük",    "gramaj": 7,  "birim": "tek",   "katsayi": 3.1993, "mevcutFiyat": 2100 }
+  ]
+}

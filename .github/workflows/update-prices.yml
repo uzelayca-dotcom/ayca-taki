@@ -1,0 +1,48 @@
+name: Fiyat Güncelleme (gram gümüş)
+
+on:
+  schedule:
+    # Ayın 1'i ve 15'i, 06:00 UTC (~09:00 TR) — yaklaşık 2 haftada bir
+    - cron: "0 6 1,15 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Yazmadan sadece hesapla (true/false)"
+        required: false
+        default: "false"
+      simulate_gram:
+        description: "Test için sabit gram gümüş değeri (boş = canlı kur)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fiyatları hesapla/güncelle
+        env:
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
+          SIMULATE_GRAM: ${{ github.event.inputs.simulate_gram }}
+        run: node scripts/update-prices.mjs
+
+      - name: Değişiklik varsa commit & push
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Otomatik fiyat güncellemesi (gram gümüş kuru)"
+            git push
+          else
+            echo "Değişiklik yok, commit atlanıyor."
+          fi
