@@ -39,6 +39,15 @@ function waLink(message) {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
 }
 
+// GA4 WhatsApp tıklama olayı (gtag varsa)
+function trackWA(location, params) {
+  try {
+    if (typeof gtag === "function") {
+      gtag("event", "whatsapp_click", Object.assign({ event_category: "engagement", location: location }, params || {}));
+    }
+  } catch (e) {}
+}
+
 const catLabel = (key) => (CATEGORIES.find((c) => c.key === key) || {}).label || "";
 
 // Galeriyi oluştur
@@ -62,7 +71,7 @@ if (grid) {
           <p class="product-desc">${p.desc}</p>
           <div class="product-foot">
             <span class="product-price${hasPrice ? "" : " ask"}">${priceText}</span>
-            <a class="wa-btn" target="_blank" rel="noopener" href="${waLink(msg)}">Sipariş İçin Yaz</a>
+            <a class="wa-btn" data-name="${p.name}" data-price="${priceText}" target="_blank" rel="noopener" href="${waLink(msg)}">Sipariş İçin Yaz</a>
           </div>
         </div>
       </article>`;
@@ -96,7 +105,39 @@ document.querySelectorAll("[data-wa]").forEach((el) => {
   el.setAttribute("href", waLink(msg));
   el.setAttribute("target", "_blank");
   el.setAttribute("rel", "noopener");
+  el.addEventListener("click", () => trackWA(el.getAttribute("data-wa-loc") || "other"));
 });
+
+// Ürün "Sipariş İçin Yaz" butonları: GA4 takibi
+if (grid) {
+  grid.querySelectorAll(".wa-btn").forEach((btn) => {
+    btn.addEventListener("click", () =>
+      trackWA("product", { item_name: btn.getAttribute("data-name"), price: btn.getAttribute("data-price") })
+    );
+  });
+}
+
+// Görsel lightbox (ürün fotoğrafına tıklayınca büyük görünüm)
+if (grid) {
+  const lb = document.createElement("div");
+  lb.className = "lightbox";
+  lb.innerHTML = '<button class="lightbox-close" aria-label="Kapat">&times;</button><img alt="" />';
+  document.body.appendChild(lb);
+  const lbImg = lb.querySelector("img");
+  const closeLb = () => { lb.classList.remove("open"); document.body.style.overflow = ""; };
+  lb.addEventListener("click", (e) => {
+    if (e.target === lb || e.target.classList.contains("lightbox-close")) closeLb();
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLb(); });
+  grid.addEventListener("click", (e) => {
+    const img = e.target.closest(".product-img img");
+    if (!img) return;
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || "";
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+}
 
 // Mobil menü aç/kapat
 const toggle = document.getElementById("navToggle");

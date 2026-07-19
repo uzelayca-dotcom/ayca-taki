@@ -90,7 +90,7 @@
         <a href="#kargo">Kargo</a>
         <a href="#yorumlar">Yorumlar</a>
         <a href="#iletisim">İletişim</a>
-        <a href="#iletisim" class="nav-cta" data-wa data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum.">WhatsApp</a>
+        <a href="#iletisim" class="nav-cta" data-wa data-wa-loc="nav" data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum.">WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -106,8 +106,15 @@
       </p>
       <div class="hero-actions">
         <a href="#galeri" class="btn btn-primary">Koleksiyonu Gör</a>
-        <a href="#iletisim" class="btn btn-ghost" data-wa data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum.">WhatsApp'tan Yaz</a>
+        <a href="#iletisim" class="btn btn-ghost" data-wa data-wa-loc="hero" data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum.">WhatsApp'tan Yaz</a>
       </div>
+
+      <ul class="hero-trust">
+        <li>925 ayar gümüş</li>
+        <li>El yapımı</li>
+        <li>Kargo dahil</li>
+        <li>Özenli paketleme</li>
+      </ul>
     </div>
   </section>
 
@@ -225,7 +232,7 @@
       </header>
 
       <div class="contact-solo">
-        <a class="contact-card" data-wa data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum." href="#">
+        <a class="contact-card" data-wa data-wa-loc="contact" data-wa-msg="Merhaba! Takılarınız hakkında bilgi almak istiyorum." href="#">
           <span class="contact-ico">💬</span>
           <strong>WhatsApp'tan Yazın</strong>
           <span class="contact-meta">Sipariş ve sorularınız için en hızlı yol</span>
@@ -242,6 +249,11 @@
       <p>© <span id="year"></span> Ayça Takı · El yapımı gümüş takılar</p>
     </div>
   </footer>
+
+  <!-- Yüzen WhatsApp butonu -->
+  <a class="wa-fab" data-wa data-wa-loc="fab" data-wa-msg="Merhaba! Ayça Takı ürünleri hakkında bilgi almak istiyorum." aria-label="WhatsApp'tan yazın">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 2.667c-7.36 0-13.33 5.97-13.33 13.33 0 2.35.615 4.646 1.784 6.67L2.667 29.333l6.86-1.79a13.27 13.27 0 006.477 1.65h.005c7.36 0 13.33-5.97 13.33-13.33 0-3.563-1.387-6.913-3.906-9.432a13.24 13.24 0 00-9.43-3.764zm0 24.44h-.004a11.06 11.06 0 01-5.638-1.544l-.404-.24-4.07 1.063 1.084-3.965-.263-.407a11.06 11.06 0 01-1.695-5.877c0-6.116 4.98-11.096 11.1-11.096 2.964 0 5.75 1.155 7.846 3.253a11.02 11.02 0 013.25 7.847c0 6.117-4.98 11.096-11.096 11.096zm6.084-8.31c-.334-.167-1.972-.973-2.278-1.084-.306-.11-.528-.167-.75.167-.222.333-.86 1.083-1.055 1.305-.194.222-.389.25-.722.083-.334-.167-1.408-.519-2.681-1.655-.991-.884-1.66-1.977-1.855-2.31-.194-.334-.02-.514.146-.68.15-.15.334-.389.5-.583.167-.195.222-.334.334-.556.11-.222.055-.417-.028-.583-.083-.167-.75-1.807-1.027-2.474-.27-.649-.545-.561-.75-.572l-.639-.011c-.222 0-.583.083-.889.417-.306.333-1.166 1.14-1.166 2.78 0 1.639 1.194 3.223 1.36 3.445.167.222 2.35 3.59 5.694 5.034.796.344 1.417.55 1.9.703.798.254 1.525.218 2.099.132.64-.096 1.972-.806 2.25-1.584.277-.778.277-1.445.194-1.584-.083-.139-.306-.222-.639-.389z"/></svg>
+  </a>
 
   <script src="js/main.js"></script>
 </body>
