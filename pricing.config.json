@@ -15,6 +15,7 @@
   "urunler": [
     { "id": "kupe-yaprak-halka", "isim": "Yaprak Sarkıtlı Halka Küpe", "gramaj": 10, "birim": "cift",  "katsayi": 2.4752, "mevcutFiyat": 2300 },
     { "id": "kupe-gunes",         "isim": "Güneş Küpe",                 "gramaj": 4,  "birim": "tek",   "katsayi": 2.6521, "mevcutFiyat": 1100 },
+    { "id": "kupe-sarmal-yaprak", "isim": "Sarmal Yaprak Küpe",         "gramaj": 3.5, "birim": "tek",  "katsayi": 3.031,  "mevcutFiyat": 1100 },
     { "id": "kupe-oymali-yaprak", "isim": "Oymalı Yaprak Küpe",         "gramaj": 2,  "birim": "tek",   "katsayi": 3.5361, "mevcutFiyat": 800 },
     { "id": "kupe-cinar-yaprak",  "isim": "Çınar Yaprağı Küpe",         "gramaj": 4,  "birim": "tek",   "katsayi": 2.6521, "mevcutFiyat": 1100 },
     { "id": "yuzuk-yaprak-tas",   "isim": "Taş Mozaik Yaprak Yüzük",    "gramaj": 7,  "birim": "tek",   "katsayi": 3.1993, "mevcutFiyat": 2100 }
