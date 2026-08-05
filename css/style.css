@@ -1,14 +1,16 @@
 /* ===== Ayça Takı — Sıcak & el yapımı tema ===== */
 
 :root {
-  --bg: #faf6f0;          /* açık krem zemin */
+  --bg: #f7f4ee;          /* açık ivory zemin */
   --card: #fffdf9;        /* yumuşak beyaz kart */
-  --accent: #b5814f;      /* toprak / terracotta */
-  --accent-dark: #8f6238;
-  --text: #3b322b;        /* koyu kahve metin */
-  --muted: #8a7c6e;       /* soluk metin */
-  --line: #e7ddd0;        /* ince ayraç */
-  --shadow: 0 10px 30px rgba(80, 60, 40, 0.08);
+  --accent: #1c3350;      /* lacivert (logo) — birincil */
+  --accent-dark: #12233a; /* koyu lacivert — hover */
+  --gold: #a6842b;        /* altın — vurgu metin/aksan */
+  --gold-soft: #c9a84e;   /* açık altın — çizgi/parıltı/yıldız */
+  --text: #1b2c3d;        /* lacivert-slate metin */
+  --muted: #66727e;       /* slate gri metin */
+  --line: #e6e0d4;        /* ince ayraç */
+  --shadow: 0 10px 30px rgba(20, 35, 55, 0.10);
   --radius: 18px;
   --maxw: 1120px;
 }
@@ -65,14 +67,14 @@ img { max-width: 100%; display: block; }
   border-color: var(--accent);
   color: var(--accent-dark);
 }
-.btn-ghost:hover { background: rgba(181, 129, 79, 0.1); transform: translateY(-2px); }
+.btn-ghost:hover { background: rgba(28, 51, 80, 0.08); transform: translateY(-2px); }
 
 /* ===== Header ===== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 246, 240, 0.92);
+  background: rgba(247, 244, 238, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -86,7 +88,7 @@ img { max-width: 100%; display: block; }
   font-size: 1.5rem;
   letter-spacing: 0.5px;
 }
-.brand span { color: var(--accent); }
+.brand span { color: var(--gold); }
 .brand-logo { height: 40px; width: auto; display: block; border-radius: 7px; }
 @media (max-width: 480px) { .brand-logo { height: 34px; } }
 
@@ -133,8 +135,8 @@ img { max-width: 100%; display: block; }
 /* ===== Hero ===== */
 .hero {
   background:
-    radial-gradient(1200px 400px at 80% -10%, rgba(181, 129, 79, 0.14), transparent 60%),
-    linear-gradient(180deg, #fcf9f4 0%, var(--bg) 100%);
+    radial-gradient(1200px 400px at 80% -10%, rgba(201, 168, 78, 0.18), transparent 60%),
+    linear-gradient(180deg, #fdfbf6 0%, var(--bg) 100%);
   padding: 84px 0 76px;
 }
 .hero-inner { display: flex; align-items: center; gap: 2cm; }
@@ -150,7 +152,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: 2.5px;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--gold);
   margin: 0 0 18px;
 }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
@@ -175,7 +177,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.92rem;
 }
 .hero-trust li { display: inline-flex; align-items: center; gap: 7px; }
-.hero-trust li::before { content: "✓"; color: var(--accent); font-weight: 800; }
+.hero-trust li::before { content: "✓"; color: var(--gold); font-weight: 800; }
 
 /* Yüzen WhatsApp butonu */
 .wa-fab {
@@ -204,7 +206,7 @@ img { max-width: 100%; display: block; }
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(30, 22, 16, 0.86);
+  background: rgba(14, 26, 42, 0.9);
   display: none;
   align-items: center;
   justify-content: center;
@@ -228,14 +230,14 @@ img { max-width: 100%; display: block; }
 
 /* ===== Sections ===== */
 .section { padding: 76px 0; }
-.section-alt { background: #fcf8f2; }
+.section-alt { background: #f1ece2; }
 .section-head { text-align: center; max-width: 620px; margin: 0 auto 46px; }
 .section-eyebrow {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--gold);
   margin: 0 0 10px;
 }
 .section h2 { font-size: clamp(2rem, 4vw, 2.7rem); }
@@ -286,11 +288,11 @@ img { max-width: 100%; display: block; }
 }
 .product:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(80, 60, 40, 0.14);
+  box-shadow: 0 18px 40px rgba(20, 35, 55, 0.16);
 }
 .product-img {
   aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #efe6d8, #e3d4bf);
+  background: linear-gradient(135deg, #e9e3d4, #d7ccb4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,8 +307,8 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--accent-dark);
-  background: rgba(181, 129, 79, 0.12);
+  color: var(--gold);
+  background: rgba(166, 132, 43, 0.14);
   padding: 4px 10px;
   border-radius: 999px;
   margin-bottom: 9px;
@@ -314,7 +316,7 @@ img { max-width: 100%; display: block; }
 .product-body h3 { font-size: 1.25rem; }
 .product-desc { color: var(--muted); font-size: 0.95rem; margin: 6px 0 14px; flex: 1; }
 .product-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.product-price { font-weight: 700; color: var(--accent-dark); font-size: 1.05rem; }
+.product-price { font-weight: 700; color: var(--gold); font-size: 1.05rem; }
 .product-price.ask { font-weight: 600; font-size: 0.9rem; color: var(--muted); }
 .product .wa-btn {
   background: var(--accent);
@@ -337,7 +339,7 @@ img { max-width: 100%; display: block; }
 .about-photo {
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, #ece1d0, #ddc8ac);
+  background: linear-gradient(135deg, #e6dfcf, #d3c8ae);
   box-shadow: var(--shadow);
   display: flex;
   align-items: center;
@@ -370,7 +372,7 @@ img { max-width: 100%; display: block; }
   padding: 7px 16px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--accent-dark);
+  color: var(--gold);
 }
 
 /* ===== Kargo & Teslimat ===== */
@@ -413,14 +415,14 @@ img { max-width: 100%; display: block; }
   margin: 0;
   box-shadow: var(--shadow);
 }
-.review .stars { color: #d8a23c; letter-spacing: 2px; margin-bottom: 12px; }
+.review .stars { color: var(--gold-soft); letter-spacing: 2px; margin-bottom: 12px; }
 .review blockquote {
   margin: 0 0 14px;
   font-size: 1.02rem;
   line-height: 1.6;
   color: var(--text);
 }
-.review figcaption { color: var(--accent-dark); font-weight: 700; font-size: 0.92rem; }
+.review figcaption { color: var(--gold); font-weight: 700; font-size: 0.92rem; }
 
 /* ===== İletişim ===== */
 .contact-solo { display: flex; justify-content: center; }
@@ -455,14 +457,14 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 6px;
 }
-.contact-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(80, 60, 40, 0.14); }
+.contact-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(20, 35, 55, 0.16); }
 .contact-ico { font-size: 2rem; }
 .contact-card strong { font-size: 1.1rem; }
 .contact-meta { color: var(--muted); font-size: 0.92rem; }
 
 /* ===== Footer ===== */
 .site-footer {
-  background: #f2e9dd;
+  background: #ece6db;
   border-top: 1px solid var(--line);
   padding: 34px 0;
 }
