@@ -87,8 +87,8 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.5px;
 }
 .brand span { color: var(--accent); }
-.brand-logo { height: 52px; width: auto; display: block; border-radius: 8px; }
-@media (max-width: 480px) { .brand-logo { height: 44px; } }
+.brand-logo { height: 40px; width: auto; display: block; border-radius: 7px; }
+@media (max-width: 480px) { .brand-logo { height: 34px; } }
 
 .nav-menu {
   display: flex;
