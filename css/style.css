@@ -172,21 +172,6 @@ img { max-width: 100%; display: block; }
   margin: 0 0 18px;
 }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
-.hl {
-  white-space: nowrap;
-  position: relative;
-  padding-bottom: 6px;
-}
-.hl::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 4px;
-  background: var(--fusya);
-  border-radius: 3px;
-}
 .hero-lead {
   font-size: 1.15rem;
   color: var(--muted);
