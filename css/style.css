@@ -7,6 +7,8 @@
   --accent-dark: #12233a; /* koyu lacivert — hover */
   --gold: #a6842b;        /* altın — vurgu metin/aksan */
   --gold-soft: #c9a84e;   /* açık altın — çizgi/parıltı/yıldız */
+  --fusya: #e6197f;       /* fuşya (logo yaprağı) — noktasal pop */
+  --fusya-dark: #c01468;
   --text: #1b2c3d;        /* lacivert-slate metin */
   --muted: #66727e;       /* slate gri metin */
   --line: #e6e0d4;        /* ince ayraç */
@@ -103,7 +105,21 @@ img { max-width: 100%; display: block; }
   position: relative;
   transition: color 0.18s ease;
 }
-.nav-menu a:not(.nav-cta):hover { color: var(--accent); }
+.nav-menu a:not(.nav-cta):hover { color: var(--fusya-dark); }
+.nav-menu a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2.5px;
+  background: var(--fusya);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.18s ease;
+}
+.nav-menu a:not(.nav-cta):hover::after { transform: scaleX(1); }
 .nav-cta {
   background: var(--accent);
   color: #fff !important;
@@ -156,6 +172,11 @@ img { max-width: 100%; display: block; }
   margin: 0 0 18px;
 }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+.hl {
+  white-space: nowrap;
+  padding: 0 2px;
+  background-image: linear-gradient(transparent 62%, rgba(230, 25, 127, 0.85) 62%, rgba(230, 25, 127, 0.85) 90%, transparent 90%);
+}
 .hero-lead {
   font-size: 1.15rem;
   color: var(--muted);
@@ -265,8 +286,8 @@ img { max-width: 100%; display: block; }
 }
 .filter-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
 .filter-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--fusya);
+  border-color: var(--fusya);
   color: #fff;
 }
 
@@ -327,7 +348,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.88rem;
   transition: background 0.18s ease;
 }
-.product .wa-btn:hover { background: var(--accent-dark); }
+.product .wa-btn:hover { background: var(--fusya); }
 
 /* ===== Hakkımda ===== */
 .about-inner {
