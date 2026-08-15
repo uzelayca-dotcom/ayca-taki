@@ -19,7 +19,7 @@
       "gramaj": 10,
       "birim": "cift",
       "katsayi": 2.4752,
-      "mevcutFiyat": 2400
+      "mevcutFiyat": 2650
     },
     {
       "id": "kupe-gunes",
@@ -27,7 +27,7 @@
       "gramaj": 4,
       "birim": "tek",
       "katsayi": 2.6521,
-      "mevcutFiyat": 1150
+      "mevcutFiyat": 1250
     },
     {
       "id": "kupe-sarmal-yaprak",
@@ -35,7 +35,7 @@
       "gramaj": 3.5,
       "birim": "tek",
       "katsayi": 3.031,
-      "mevcutFiyat": 1150
+      "mevcutFiyat": 1250
     },
     {
       "id": "kupe-oymali-yaprak",
@@ -43,7 +43,7 @@
       "gramaj": 2,
       "birim": "tek",
       "katsayi": 3.5361,
-      "mevcutFiyat": 800
+      "mevcutFiyat": 900
     },
     {
       "id": "kupe-cinar-yaprak",
@@ -51,7 +51,7 @@
       "gramaj": 4,
       "birim": "tek",
       "katsayi": 2.6521,
-      "mevcutFiyat": 1150
+      "mevcutFiyat": 1250
     },
     {
       "id": "yuzuk-yaprak-tas",
@@ -59,7 +59,7 @@
       "gramaj": 7,
       "birim": "tek",
       "katsayi": 3.1993,
-      "mevcutFiyat": 2150
+      "mevcutFiyat": 2450
     }
   ]
 }
