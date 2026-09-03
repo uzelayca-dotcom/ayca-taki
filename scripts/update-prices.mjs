@@ -44,7 +44,8 @@ async function fetchGram(cfg) {
 }
 
 function computeNew(p, gram, cfg) {
-  const candidate = round50(p.gramaj * gram * p.katsayi + cfg.kargo);
+  const ek = cfg.ekMaliyetler ? Object.values(cfg.ekMaliyetler).reduce((a, b) => a + b, 0) : 0;
+  const candidate = round50(p.gramaj * gram * p.katsayi + cfg.kargo + ek);
   if (candidate <= p.mevcutFiyat) {
     return cfg.sadeceArtis ? p.mevcutFiyat : candidate; // düşürme yalnızca sadeceArtis=false ise
   }

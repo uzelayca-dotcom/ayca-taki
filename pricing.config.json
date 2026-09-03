@@ -1,5 +1,5 @@
 {
-  "_aciklama": "Otomatik fiyat güncelleme yapılandırması. scripts/update-prices.mjs bunu okur. Fiyat = round50(gramaj × gramGümüşTL × katsayi + kargo). Politika: sadece artış (gümüş düşerse fiyat sabit), tur başına en fazla +%15. Fiyatlar 106.56 TL/g kuru ve 500 TL kargo ile hesaplandı. Katsayılar 2026-07-19 kuruna (84.84 TL/g) göre kalibre edildi.",
+  "_aciklama": "Otomatik fiyat güncelleme yapılandırması. scripts/update-prices.mjs bunu okur. Fiyat = round50(gramaj × gramGümüşTL × katsayi + kargo). Politika: sadece artış (gümüş düşerse fiyat sabit), tur başına en fazla +%15. Fiyata kargo (500) + deri+ip+kutu (56.5) dahildir. Fiyatlar 106.56 TL/g ile hesaplandı. Katsayılar 84.84 TL/g'ye kalibre edildi.",
   "kargo": 500,
   "yuvarla": 50,
   "artisTavaniOran": 0.15,
@@ -19,7 +19,7 @@
       "gramaj": 10,
       "birim": "cift",
       "katsayi": 2.4752,
-      "mevcutFiyat": 3150
+      "mevcutFiyat": 3200
     },
     {
       "id": "kupe-gunes",
@@ -27,7 +27,7 @@
       "gramaj": 4,
       "birim": "tek",
       "katsayi": 2.6521,
-      "mevcutFiyat": 1650
+      "mevcutFiyat": 1700
     },
     {
       "id": "kupe-sarmal-yaprak",
@@ -35,7 +35,7 @@
       "gramaj": 3.5,
       "birim": "tek",
       "katsayi": 3.031,
-      "mevcutFiyat": 1650
+      "mevcutFiyat": 1700
     },
     {
       "id": "kupe-oymali-yaprak",
@@ -43,7 +43,7 @@
       "gramaj": 2,
       "birim": "tek",
       "katsayi": 3.5361,
-      "mevcutFiyat": 1250
+      "mevcutFiyat": 1300
     },
     {
       "id": "kupe-cinar-yaprak",
@@ -51,7 +51,7 @@
       "gramaj": 8,
       "birim": "tek",
       "katsayi": 2.6521,
-      "mevcutFiyat": 2750
+      "mevcutFiyat": 2800
     },
     {
       "id": "yuzuk-yaprak-tas",
@@ -59,7 +59,12 @@
       "gramaj": 7,
       "birim": "tek",
       "katsayi": 3.1993,
-      "mevcutFiyat": 2900
+      "mevcutFiyat": 2950
     }
-  ]
+  ],
+  "ekMaliyetler": {
+    "deri10x15": 50,
+    "ip": 1.5,
+    "kutu": 5
+  }
 }
