@@ -440,6 +440,50 @@ img { max-width: 100%; display: block; }
 }
 .review figcaption { color: var(--gold); font-weight: 700; font-size: 0.92rem; }
 
+/* Ziyaretçi yorum formu */
+.review-form {
+  max-width: 560px;
+  margin: 40px auto 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 26px;
+  text-align: center;
+}
+.review-form h3 { font-size: 1.35rem; margin: 0 0 6px; }
+.review-form-sub { color: var(--muted); font-size: 0.92rem; margin: 0 0 16px; }
+.star-input { display: inline-flex; gap: 4px; margin: 0 0 16px; }
+.star-btn {
+  background: none;
+  border: 0;
+  padding: 0 2px;
+  font-size: 2.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--line);
+  transition: color 0.12s ease, transform 0.12s ease;
+}
+.star-btn:hover { transform: scale(1.12); }
+.star-btn.on { color: var(--gold-soft); }
+.review-input {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--text);
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 11px 14px;
+  margin: 0 0 12px;
+  transition: border-color 0.15s ease;
+}
+.review-input:focus { outline: none; border-color: var(--accent); }
+textarea.review-input { resize: vertical; min-height: 70px; }
+.review-form .btn-primary { width: 100%; }
+.review-form-note { margin: 12px 0 0; font-size: 0.9rem; font-weight: 600; color: var(--fusya-dark); }
+
 /* ===== İletişim ===== */
 .contact-solo { display: flex; justify-content: center; }
 .contact-solo .contact-card { max-width: 440px; width: 100%; padding: 40px 30px; }

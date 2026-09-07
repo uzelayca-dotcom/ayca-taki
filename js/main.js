@@ -161,6 +161,39 @@ if (toggle && menu) {
   );
 }
 
+// Ziyaretçi yorum formu — yıldız seç + WhatsApp ile gönder (onaya)
+const revForm = document.getElementById("reviewForm");
+if (revForm) {
+  const starBtns = [...revForm.querySelectorAll(".star-btn")];
+  const nameEl = document.getElementById("revName");
+  const textEl = document.getElementById("revText");
+  const sendEl = document.getElementById("revSend");
+  const noteEl = document.getElementById("revNote");
+  let rating = 0;
+
+  const paint = (n) => starBtns.forEach((b, i) => b.classList.toggle("on", i < n));
+  starBtns.forEach((b) => {
+    b.addEventListener("mouseenter", () => paint(+b.dataset.v));
+    b.addEventListener("click", () => { rating = +b.dataset.v; paint(rating); });
+  });
+  revForm.querySelector(".star-input").addEventListener("mouseleave", () => paint(rating));
+
+  const showNote = (msg) => { noteEl.textContent = msg; noteEl.hidden = false; };
+
+  sendEl.addEventListener("click", () => {
+    const ad = (nameEl.value || "").trim();
+    const yorum = (textEl.value || "").trim();
+    if (!rating) return showNote("Lütfen önce yıldız (puan) seçin.");
+    if (!ad) return showNote("Lütfen adınızı yazın.");
+    if (yorum.length < 5) return showNote("Lütfen yorumunuzu yazın.");
+    const yildiz = "★".repeat(rating) + "☆".repeat(5 - rating);
+    const msg = `Yeni müşteri yorumu ⭐\nPuan: ${yildiz} (${rating}/5)\nAd: ${ad}\nYorum: ${yorum}`;
+    trackWA("review_form", { rating: rating });
+    window.open(waLink(msg), "_blank", "noopener");
+    showNote("Teşekkürler! Yorumunuz WhatsApp'tan bize iletiliyor; onayladıktan sonra sayfada yayınlanacak.");
+  });
+}
+
 // Footer yılı
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
