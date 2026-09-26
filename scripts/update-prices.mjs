@@ -24,6 +24,54 @@ const round50 = (x) => Math.round(x / 50) * 50;
 const trGroup = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function getJson(url) {
+  const res = await fetch(url, {
+    headers: { "User-Agent": "ayca-taki-price-bot" },
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+async function withRetry(fn, tries = 3, delayMs = 2500) {
+  let lastErr;
+  for (let i = 1; i <= tries; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      lastErr = e;
+      console.log(`  deneme ${i}/${tries} başarısız: ${e.message}`);
+      if (i < tries) await sleep(delayMs);
+    }
+  }
+  throw lastErr;
+}
+
+// Birincil kaynak: truncgil (TR biçimli gram gümüş)
+async function truncgilGram(cfg) {
+  const src = cfg.gumusKaynak;
+  const data = await getJson(src.url);
+  const raw = data?.[src.anahtar]?.[src.alan];
+  if (raw == null) throw new Error(`'${src.anahtar}.${src.alan}' yok`);
+  const g = parseFloat(String(raw).replace(/\./g, "").replace(",", "."));
+  if (!Number.isFinite(g)) throw new Error(`çözümlenemedi: ${raw}`);
+  return g;
+}
+
+// Yedek kaynak: XAG (USD/ons) × USD/TRY -> gram gümüş TL
+async function metalsFxGram() {
+  const [xag, fx] = await Promise.all([
+    getJson("https://api.gold-api.com/price/XAG"),
+    getJson("https://open.er-api.com/v6/latest/USD"),
+  ]);
+  const usdPerOz = xag?.price;
+  const usdTry = fx?.rates?.TRY;
+  if (!usdPerOz || !usdTry) throw new Error("XAG veya USD/TRY eksik");
+  return (usdPerOz / 31.1035) * usdTry;
+}
+
 async function fetchGram(cfg) {
   const sim = process.env.SIMULATE_GRAM;
   if (sim) {
@@ -31,16 +79,24 @@ async function fetchGram(cfg) {
     console.log(`(SIMULATE_GRAM) gram gümüş = ${g} TL`);
     return g;
   }
-  const src = cfg.gumusKaynak;
-  const res = await fetch(src.url, { headers: { "User-Agent": "ayca-taki-price-bot" } });
-  if (!res.ok) throw new Error(`Kaynak HTTP ${res.status}`);
-  const data = await res.json();
-  const raw = data?.[src.anahtar]?.[src.alan];
-  if (raw == null) throw new Error(`Kaynakta '${src.anahtar}.${src.alan}' bulunamadı`);
-  // TR sayı: "1.234,56" -> 1234.56 ; "84,84" -> 84.84
-  const g = parseFloat(String(raw).replace(/\./g, "").replace(",", "."));
-  if (!Number.isFinite(g)) throw new Error(`Kur çözümlenemedi: ${raw}`);
-  return g;
+  const { makulMin, makulMax } = cfg.gumusKaynak;
+  const sources = [
+    { name: "truncgil", run: () => truncgilGram(cfg) },
+    { name: "gold-api+er-api", run: () => metalsFxGram() },
+  ];
+  for (const s of sources) {
+    try {
+      const g = await withRetry(s.run);
+      if (g >= makulMin && g <= makulMax) {
+        console.log(`Kaynak: ${s.name} → ${g.toFixed(2)} TL/g`);
+        return g;
+      }
+      console.log(`  ${s.name} makul aralık dışında (${g}), sonraki kaynağa geçiliyor`);
+    } catch (e) {
+      console.log(`  ${s.name} tümüyle başarısız (${e.message}), sonraki kaynağa geçiliyor`);
+    }
+  }
+  throw new Error("Tüm gümüş kaynakları başarısız");
 }
 
 function computeNew(p, gram, cfg) {
