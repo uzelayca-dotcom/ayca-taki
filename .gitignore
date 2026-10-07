@@ -8,3 +8,9 @@
 
 # Loglar
 *.log
+
+# Büyük kaynak videolar (web'e optimize edilmeden commit edilmemeli)
+*.MP4
+*.mov
+*.MOV
+images/Ayça Takı.MP4
