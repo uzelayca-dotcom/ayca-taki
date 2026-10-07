@@ -194,6 +194,19 @@ if (revForm) {
   });
 }
 
+// Yorum fotoğrafı da lightbox'ta büyütülsün (galeri lightbox'ını yeniden kullanır)
+document.querySelectorAll(".review-photo").forEach((img) => {
+  img.addEventListener("click", () => {
+    const lb = document.querySelector(".lightbox");
+    if (!lb) return;
+    const lbImg = lb.querySelector("img");
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || "";
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+});
+
 // Footer yılı
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();

@@ -452,6 +452,16 @@ img { max-width: 100%; display: block; }
   margin: 0;
   box-shadow: var(--shadow);
 }
+.review-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  display: block;
+  cursor: zoom-in;
+}
 .review .stars { color: var(--gold-soft); letter-spacing: 2px; margin-bottom: 12px; }
 .review blockquote {
   margin: 0 0 14px;
