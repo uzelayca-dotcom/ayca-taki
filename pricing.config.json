@@ -1,6 +1,6 @@
 {
-  "_aciklama": "Otomatik fiyat güncelleme yapılandırması. scripts/update-prices.mjs bunu okur. Fiyat = round50(gramaj × gramGümüşTL × katsayi + kargo). Politika: sadece artış (gümüş düşerse fiyat sabit), tur başına en fazla +%15. Fiyata kargo (500) + deri/ip/kutu (56.5) dahil; %4 gelir vergisi tevkifatı için 1/(1-0.04)'e bölünür. 106.56 TL/g ile hesaplandı.",
-  "kargo": 500,
+  "_aciklama": "Otomatik fiyat güncelleme yapılandırması. scripts/update-prices.mjs bunu okur. Fiyat = round50(gramaj × gramGümüşTL × katsayi + kargo). Politika: sadece artış (gümüş düşerse fiyat sabit), tur başına en fazla +%15. Fiyata kargo (550) + deri/ip/kutu (56.5) dahil; %4 gelir vergisi tevkifatı için 1/(1-0.04)'e bölünür. 106.56 TL/g ile hesaplandı.",
+  "kargo": 550,
   "yuvarla": 50,
   "artisTavaniOran": 0.15,
   "sadeceArtis": true,
@@ -19,7 +19,7 @@
       "gramaj": 10,
       "birim": "cift",
       "katsayi": 2.4752,
-      "mevcutFiyat": 3350
+      "mevcutFiyat": 3400
     },
     {
       "id": "kupe-gunes",
@@ -27,7 +27,7 @@
       "gramaj": 4,
       "birim": "tek",
       "katsayi": 2.6521,
-      "mevcutFiyat": 1750
+      "mevcutFiyat": 1800
     },
     {
       "id": "kupe-sarmal-yaprak",
@@ -35,7 +35,7 @@
       "gramaj": 3.5,
       "birim": "tek",
       "katsayi": 3.031,
-      "mevcutFiyat": 1750
+      "mevcutFiyat": 1800
     },
     {
       "id": "kupe-oymali-yaprak",
@@ -43,7 +43,7 @@
       "gramaj": 2,
       "birim": "tek",
       "katsayi": 3.5361,
-      "mevcutFiyat": 1350
+      "mevcutFiyat": 1400
     },
     {
       "id": "kupe-cinar-yaprak",
@@ -51,7 +51,7 @@
       "gramaj": 8,
       "birim": "tek",
       "katsayi": 2.6521,
-      "mevcutFiyat": 2950
+      "mevcutFiyat": 3000
     },
     {
       "id": "yuzuk-yaprak-tas",
@@ -59,7 +59,7 @@
       "gramaj": 7,
       "birim": "tek",
       "katsayi": 3.1993,
-      "mevcutFiyat": 3050
+      "mevcutFiyat": 3100
     }
   ],
   "ekMaliyetler": {
