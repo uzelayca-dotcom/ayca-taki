@@ -32,18 +32,18 @@
     {
       "id": "kupe-sarmal-yaprak",
       "isim": "Sarmal Yaprak Küpe",
-      "gramaj": 3.5,
+      "gramaj": 4,
       "birim": "tek",
       "katsayi": 3.031,
-      "mevcutFiyat": 1800
+      "mevcutFiyat": 2000
     },
     {
       "id": "kupe-oymali-yaprak",
       "isim": "Oymalı Yaprak Küpe",
-      "gramaj": 2,
+      "gramaj": 4,
       "birim": "tek",
       "katsayi": 3.5361,
-      "mevcutFiyat": 1400
+      "mevcutFiyat": 2200
     },
     {
       "id": "kupe-cinar-yaprak",
