@@ -553,6 +553,22 @@ textarea.review-input { resize: vertical; min-height: 70px; }
 .contact-card strong { font-size: 1.1rem; }
 .contact-meta { color: var(--muted); font-size: 0.92rem; }
 
+/* ===== Instagram linkleri ===== */
+.ig-ico { width: 20px; height: 20px; flex: 0 0 auto; }
+.ig-follow { text-align: center; margin: 22px 0 0; }
+.ig-follow a {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: var(--muted); text-decoration: none; font-weight: 700; font-size: 0.95rem;
+  transition: color 0.18s ease;
+}
+.ig-follow a:hover { color: var(--pop); }
+.footer-ig {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.92rem;
+  transition: color 0.18s ease;
+}
+.footer-ig:hover { color: var(--pop); }
+
 /* ===== Footer ===== */
 .site-footer {
   background: #ece6db;
