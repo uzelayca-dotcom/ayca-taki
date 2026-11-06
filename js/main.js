@@ -31,7 +31,7 @@ const PRODUCTS = [
   { id: "kupe-gunes",        name: "Güneş Küpe",                 cat: "kupe",  desc: "Işıltılı güneş motifli, hafif sarkıt küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",       price: "₺1.800", image: "images/kupe-gunes.jpg" },
   { id: "kupe-sarmal-yaprak", name: "Sarmal Yaprak Küpe",        cat: "kupe",  desc: "Yaprak formunda, içi sarmal oymalı el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",  price: "₺2.000", image: "images/kupe-sarmal-yaprak.jpg" },
   { id: "kupe-oymali-yaprak", name: "Oymalı Yaprak Küpe",        cat: "kupe",  desc: "Yaprak formunda, oymalı el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",           price: "₺2.200",   image: "images/kupe-oymali-yaprak.jpg" },
-  { id: "kupe-cinar-yaprak", name: "Çınar Yaprağı Küpe",         cat: "kupe",  desc: "Dokulu çınar yaprağı formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺3.000", image: "images/kupe-cinar-yaprak.jpg" },
+  { id: "kupe-cinar-yaprak", name: "Çınar Yaprağı Küpe",         cat: "kupe",  desc: "Dokulu çınar yaprağı formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺3.000", image: "images/kupe-cinar-yaprak.jpg", page: "urun/cinar-yapragi-kupe.html" },
   { id: "yuzuk-yaprak-tas",  name: "Taş Mozaik Yaprak Yüzük",    cat: "yuzuk", desc: "Doğal taş mozaik işlemeli, yaprak formunda yüzük. Kargo ücreti dahildir.",   price: "₺3.100", image: "images/yuzuk-yaprak-tas.jpg" },
 ];
 
@@ -73,6 +73,7 @@ if (grid) {
           <span class="product-tag">${catLabel(p.cat)}</span>
           <h3>${p.name}</h3>
           <p class="product-desc">${p.desc}</p>
+          ${p.page ? `<a class="product-link" href="${p.page}">Üretilenler &amp; stok →</a>` : ""}
           <div class="product-foot">
             <span class="product-price${hasPrice ? "" : " ask"}">${priceText}</span>
             <a class="wa-btn" data-name="${p.name}" data-price="${priceText}" target="_blank" rel="noopener" href="${waLink(msg)}">Sipariş İçin Yaz</a>
