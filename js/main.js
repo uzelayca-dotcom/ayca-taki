@@ -58,9 +58,12 @@ const catLabel = (key) => (CATEGORIES.find((c) => c.key === key) || {}).label ||
 const grid = document.getElementById("galleryGrid");
 if (grid) {
   grid.innerHTML = PRODUCTS.map((p) => {
-    const media = p.image
-      ? `<div class="product-img"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.closest('.product-img').textContent='💍'" /></div>`
-      : `<div class="product-img">💍</div>`;
+    const imgTag = p.image
+      ? `<img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.closest('.product-img').textContent='💍'" />`
+      : "💍";
+    const media = p.image && p.page
+      ? `<a class="product-img" href="${p.page}" aria-label="${p.name} — üretilenler & stok">${imgTag}</a>`
+      : `<div class="product-img">${imgTag}</div>`;
     const hasPrice = p.price && p.price.trim() !== "";
     const priceText = hasPrice ? p.price : "Fiyat için yazın";
     const msg = hasPrice
@@ -71,7 +74,7 @@ if (grid) {
         ${media}
         <div class="product-body">
           <span class="product-tag">${catLabel(p.cat)}</span>
-          <h3>${p.name}</h3>
+          <h3>${p.page ? `<a href="${p.page}">${p.name}</a>` : p.name}</h3>
           <p class="product-desc">${p.desc}</p>
           ${p.page ? `<a class="product-link" href="${p.page}">Üretilenler &amp; stok →</a>` : ""}
           <div class="product-foot">
@@ -137,6 +140,7 @@ if (grid) {
   grid.addEventListener("click", (e) => {
     const img = e.target.closest(".product-img img");
     if (!img) return;
+    if (img.closest("a")) return; // detay sayfasına giden kart: lightbox yerine linke bırak
     lbImg.src = img.src;
     lbImg.alt = img.alt || "";
     lb.classList.add("open");
