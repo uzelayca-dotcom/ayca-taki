@@ -33,6 +33,7 @@ const PRODUCTS = [
   { id: "kupe-oymali-yaprak", name: "Oymalı Yaprak Küpe",        cat: "kupe",  desc: "Yaprak formunda, oymalı el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",           price: "₺2.200",   image: "images/kupe-oymali-yaprak.jpg" },
   { id: "kupe-cinar-yaprak", name: "Çınar Yaprağı Küpe",         cat: "kupe",  desc: "Dokulu çınar yaprağı formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺3.000", image: "images/kupe-cinar-yaprak.jpg", page: "urun/cinar-yapragi-kupe.html" },
   { id: "yuzuk-yaprak-tas",  name: "Taş Mozaik Yaprak Yüzük",    cat: "yuzuk", desc: "Doğal taş mozaik işlemeli, yaprak formunda yüzük. Kargo ücreti dahildir.",   price: "₺3.100", image: "images/yuzuk-yaprak-tas.jpg", page: "urun/tas-mozaik-yaprak-yuzuk.html" },
+  { id: "kolye-cinar-yaprak", name: "Çınar Yaprağı Kolye",       cat: "kolye", desc: "Çınar yaprağı formunda el yapımı kolye ucu, ince zincirle. Kargo ücreti dahildir.", price: "₺3.000", image: "images/cinar-kolye-card.jpg", page: "urun/cinar-yapragi-kolye.html" },
 ];
 
 /* ----------------------------------------------------------------
