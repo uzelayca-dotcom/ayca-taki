@@ -27,7 +27,7 @@ const CATEGORIES = [
    otomatik güncellenir — bkz. scripts/update-prices.mjs ve pricing.config.json.
    Fiyatı elle değiştirmek istersen buradan ya da pricing.config.json'dan yapabilirsin. */
 const PRODUCTS = [
-  { id: "kupe-yaprak-halka", name: "Yaprak Sarkıtlı Halka Küpe", cat: "kupe",  desc: "Yaprak sarkıtlı, el yapımı zarif halka küpe. Çift olarak satılır. Kargo ücreti dahildir.",                     price: "₺3.400", image: "images/kupe-yaprak-halka.jpg" },
+  { id: "kupe-yaprak-halka", name: "Yaprak Sarkıtlı Halka Küpe", cat: "kupe",  desc: "Yaprak sarkıtlı, el yapımı zarif halka küpe. Çift olarak satılır. Kargo ücreti dahildir.",                     price: "₺3.400", image: "images/kupe-yaprak-halka.jpg", page: "urun/yaprak-sarkitli-halka-kupe.html" },
   { id: "kupe-gunes",        name: "Güneş Küpe",                 cat: "kupe",  desc: "Işıltılı güneş motifli, hafif sarkıt küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",       price: "₺1.800", image: "images/kupe-gunes.jpg" },
   { id: "kupe-sarmal-yaprak", name: "Sarmal Yaprak Küpe",        cat: "kupe",  desc: "Yaprak formunda, içi sarmal oymalı el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",  price: "₺2.000", image: "images/kupe-sarmal-yaprak.jpg" },
   { id: "kupe-oymali-yaprak", name: "Oymalı Yaprak Küpe",        cat: "kupe",  desc: "Yaprak formunda, oymalı el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.",           price: "₺2.200",   image: "images/kupe-oymali-yaprak.jpg" },
