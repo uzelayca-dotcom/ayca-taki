@@ -37,6 +37,7 @@ const PRODUCTS = [
   { id: "kupe-kucuk-sarmal",  name: "Küçük Sarmal Küpe",         cat: "kupe",  desc: "Küçük boy, sarmal (spiral) formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺1.150", image: "images/kucuk-sarmal-1.jpg", page: "urun/kucuk-sarmal-kupe.html" },
   { id: "kolye-cam-agaci",   name: "Büyük Çam Ağacı Kolye",     cat: "kolye", desc: "Çam ağacı formunda el yapımı kolye ucu, ince zincirle. Kargo ücreti dahildir.", price: "₺750", image: "images/cam-kolye-card.jpg", page: "urun/buyuk-cam-agaci-kolye.html" },
   { id: "kupe-cam-agaci",    name: "Küçük Çam Ağacı Küpe",      cat: "kupe",  desc: "Çam ağacı formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺550", image: "images/cam-kupe.jpg", page: "urun/kucuk-cam-agaci-kupe.html" },
+  { id: "kolye-mabet-yaprak", name: "Mabet Ağacı Yaprağı Kolye", cat: "kolye", desc: "Mabet ağacı (ginkgo) yaprağı formunda el yapımı kolye ucu, ince zincirle. Kargo ücreti dahildir.", price: "₺2.850", image: "images/mabet-kolye-card.jpg", page: "urun/mabet-agaci-yapragi-kolye.html" },
 ];
 
 /* ----------------------------------------------------------------

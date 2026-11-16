@@ -76,6 +76,14 @@
       "birim": "tek",
       "katsayi": 3.031,
       "mevcutFiyat": 1150
+    },
+    {
+      "id": "kolye-mabet-yaprak",
+      "isim": "Mabet Ağacı Yaprağı Kolye",
+      "gramaj": 7.5,
+      "birim": "tek",
+      "katsayi": 2.6521,
+      "mevcutFiyat": 2850
     }
   ],
   "ekMaliyetler": {
