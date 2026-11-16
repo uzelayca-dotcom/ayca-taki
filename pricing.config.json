@@ -116,6 +116,14 @@
       "birim": "cift",
       "katsayi": 2.6521,
       "mevcutFiyat": 1350
+    },
+    {
+      "id": "kupe-yildiz",
+      "isim": "Yıldız Küpe",
+      "gramaj": 2,
+      "birim": "cift",
+      "katsayi": 2.6521,
+      "mevcutFiyat": 1200
     }
   ],
   "ekMaliyetler": {
