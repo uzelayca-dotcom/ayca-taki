@@ -23,8 +23,8 @@ const CATEGORIES = [
       price: fiyat metni (boş "" bırakılırsa "Fiyat için yazın" gösterilir)
       image: images/ klasöründeki dosya yolu (boşsa yer tutucu ikon)
    ---------------------------------------------------------------- */
-/* Not: "price" alanları 2 haftada bir GitHub Actions ile (gram gümüş kuruna göre)
-   otomatik güncellenir — bkz. scripts/update-prices.mjs ve pricing.config.json.
+/* Not: "price" alanları 2 haftada bir GitHub Actions ile otomatik güncellenir —
+   bkz. scripts/update-prices.mjs ve pricing.config.json.
    Fiyatı elle değiştirmek istersen buradan ya da pricing.config.json'dan yapabilirsin. */
 const PRODUCTS = [
   { id: "kupe-yaprak-halka", name: "Yaprak Sarkıtlı Halka Küpe", cat: "kupe",  desc: "Yaprak sarkıtlı, el yapımı zarif halka küpe. Çift olarak satılır. Kargo ücreti dahildir.",                     price: "₺3.400", image: "images/kupe-yaprak-halka.jpg", page: "urun/yaprak-sarkitli-halka-kupe.html" },
