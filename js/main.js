@@ -35,6 +35,7 @@ const PRODUCTS = [
   { id: "yuzuk-yaprak-tas",  name: "Taş Mozaik Yaprak Yüzük",    cat: "yuzuk", desc: "Doğal taş mozaik işlemeli, yaprak formunda yüzük. Kargo ücreti dahildir.",   price: "₺3.100", image: "images/yuzuk-yaprak-tas.jpg", page: "urun/tas-mozaik-yaprak-yuzuk.html" },
   { id: "kolye-cinar-yaprak", name: "Çınar Yaprağı Kolye",       cat: "kolye", desc: "Çınar yaprağı formunda el yapımı kolye ucu, ince zincirle. Kargo ücreti dahildir.", price: "₺3.000", image: "images/cinar-kolye-card.jpg", page: "urun/cinar-yapragi-kolye.html" },
   { id: "kupe-kucuk-sarmal",  name: "Küçük Sarmal Küpe",         cat: "kupe",  desc: "Küçük boy, sarmal (spiral) formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺1.150", image: "images/kucuk-sarmal-1.jpg", page: "urun/kucuk-sarmal-kupe.html" },
+  { id: "kolye-cam-agaci",   name: "Büyük Çam Ağacı Kolye",     cat: "kolye", desc: "Çam ağacı formunda el yapımı kolye ucu, ince zincirle. Kargo ücreti dahildir.", price: "₺750", image: "images/cam-kolye-card.jpg", page: "urun/buyuk-cam-agaci-kolye.html" },
 ];
 
 /* ----------------------------------------------------------------
