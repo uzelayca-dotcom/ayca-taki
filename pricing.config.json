@@ -60,6 +60,14 @@
       "birim": "tek",
       "katsayi": 3.1993,
       "mevcutFiyat": 3100
+    },
+    {
+      "id": "kolye-cinar-yaprak",
+      "isim": "Çınar Yaprağı Kolye",
+      "gramaj": 8,
+      "birim": "tek",
+      "katsayi": 2.6521,
+      "mevcutFiyat": 3000
     }
   ],
   "ekMaliyetler": {
