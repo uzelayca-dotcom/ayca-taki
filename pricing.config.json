@@ -84,6 +84,14 @@
       "birim": "tek",
       "katsayi": 2.6521,
       "mevcutFiyat": 2850
+    },
+    {
+      "id": "kupe-kucuk-cinar",
+      "isim": "Küçük Çınar Yaprağı Küpe",
+      "gramaj": 3.5,
+      "birim": "tek",
+      "katsayi": 2.6521,
+      "mevcutFiyat": 1650
     }
   ],
   "ekMaliyetler": {
