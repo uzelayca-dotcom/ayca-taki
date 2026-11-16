@@ -43,6 +43,7 @@ const PRODUCTS = [
   { id: "kupe-zeytin-yay",   name: "Yay Zeytin Dalı Küpe",      cat: "kupe",  desc: "Zeytin dalı formunda el yapımı küpe (hafif yay/kavisli). Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺1.200", image: "images/zeytin-yay.jpg", page: "urun/yay-zeytin-dali-kupe.html" },
   { id: "kupe-kalp",         name: "Kalp Küpe",                 cat: "kupe",  desc: "Kalp formunda el yapımı stud (çıtçıt) küpe. Çift olarak satılır. Kargo ücreti dahildir.", price: "₺1.350", image: "images/kalp-kupe.jpg", page: "urun/kalp-kupe.html" },
   { id: "kupe-yildiz",       name: "Yıldız Küpe",               cat: "kupe",  desc: "Yıldız formunda el yapımı stud (çıtçıt) küpe. Çift olarak satılır. Kargo ücreti dahildir.", price: "₺1.200", image: "images/yildiz-kupe.jpg", page: "urun/yildiz-kupe.html" },
+  { id: "yuzuk-ozel-imza",   name: "Özel Tasarım Yüzük",        cat: "yuzuk", desc: "Kişiye özel tasarlanmış, imza baş harfi yüzük. Tek ve eşsiz — bu tasarım bir daha üretilmiyor. Siz de kendinize özel tasarım yaptırabilirsiniz.", price: "Kişiye özel", image: "images/ozel-tasarim-yuzuk.jpg", page: "urun/ozel-tasarim-yuzuk.html", linkLabel: "Hikâyesini gör →" },
 ];
 
 /* ----------------------------------------------------------------
@@ -86,7 +87,7 @@ if (grid) {
           <span class="product-tag">${catLabel(p.cat)}</span>
           <h3>${p.page ? `<a href="${p.page}">${p.name}</a>` : p.name}</h3>
           <p class="product-desc">${p.desc}</p>
-          ${p.page ? `<a class="product-link" href="${p.page}">Üretilenler &amp; stok →</a>` : ""}
+          ${p.page ? `<a class="product-link" href="${p.page}">${p.linkLabel || "Üretilenler &amp; stok →"}</a>` : ""}
           <div class="product-foot">
             <span class="product-price${hasPrice ? "" : " ask"}">${priceText}</span>
             <a class="wa-btn" data-name="${p.name}" data-price="${priceText}" target="_blank" rel="noopener" href="${waLink(msg)}">Sipariş İçin Yaz</a>
