@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   update:
@@ -32,9 +33,10 @@ jobs:
         env:
           DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
           SIMULATE_GRAM: ${{ github.event.inputs.simulate_gram }}
-        run: node scripts/update-prices.mjs
+        run: node scripts/update-prices.mjs | tee /tmp/price-log.txt
 
       - name: Değişiklik varsa commit & push
+        id: commit
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           if [ -n "$(git status --porcelain)" ]; then
@@ -43,6 +45,38 @@ jobs:
             git add -A
             git commit -m "Otomatik fiyat güncellemesi (gram gümüş kuru)"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "Değişiklik yok, commit atlanıyor."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Fiyat değiştiyse e-posta için bildirim (GitHub Issue)
+        if: ${{ steps.commit.outputs.changed == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          GRAM=$(grep 'Gram gümüş:' /tmp/price-log.txt | head -1 || true)
+          CHANGED=$(grep '(değişti)' /tmp/price-log.txt || true)
+          BUGUN=$(date -u +'%Y-%m-%d %H:%M UTC')
+          BODY=$(cat <<EOF
+          Merhaba @uzelayca-dotcom 👋
+
+          Gümüş kuru yükseldiği için site fiyatları **otomatik güncellendi**. Site birkaç dakika içinde yenilenir — aycataki.com.
+
+          **$GRAM**
+
+          **Değişen ürünler** (ürün · eski → yeni ₺):
+          \`\`\`
+          $CHANGED
+          \`\`\`
+
+          Tarih: $BUGUN
+
+          — Otomatik fiyat güncelleme botu
+          EOF
+          )
+          gh issue create \
+            --title "💰 Site fiyatları güncellendi ($(date -u +%Y-%m-%d))" \
+            --body "$BODY" \
+            --assignee uzelayca-dotcom
