@@ -41,6 +41,7 @@ const PRODUCTS = [
   { id: "kupe-kucuk-cinar",  name: "Küçük Çınar Yaprağı Küpe",  cat: "kupe",  desc: "Küçük boy, çınar yaprağı formunda el yapımı küpe. Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺1.650", image: "images/kucuk-cinar-kupe.jpg", page: "urun/kucuk-cinar-yapragi-kupe.html" },
   { id: "kupe-zeytin-duz",   name: "Düz Zeytin Dalı Küpe",      cat: "kupe",  desc: "Zeytin dalı formunda el yapımı küpe (düz diziliş). Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺1.200", image: "images/zeytin-duz.jpg", page: "urun/duz-zeytin-dali-kupe.html" },
   { id: "kupe-zeytin-yay",   name: "Yay Zeytin Dalı Küpe",      cat: "kupe",  desc: "Zeytin dalı formunda el yapımı küpe (hafif yay/kavisli). Tek küpe (adet) olarak satılır; kombininizi siz oluşturun. Kargo ücreti dahildir.", price: "₺1.200", image: "images/zeytin-yay.jpg", page: "urun/yay-zeytin-dali-kupe.html" },
+  { id: "kupe-kalp",         name: "Kalp Küpe",                 cat: "kupe",  desc: "Kalp formunda el yapımı stud (çıtçıt) küpe. Çift olarak satılır. Kargo ücreti dahildir.", price: "₺1.350", image: "images/kalp-kupe.jpg", page: "urun/kalp-kupe.html" },
 ];
 
 /* ----------------------------------------------------------------

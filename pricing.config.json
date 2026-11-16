@@ -108,6 +108,14 @@
       "birim": "tek",
       "katsayi": 2.6521,
       "mevcutFiyat": 1200
+    },
+    {
+      "id": "kupe-kalp",
+      "isim": "Kalp Küpe",
+      "gramaj": 2.5,
+      "birim": "cift",
+      "katsayi": 2.6521,
+      "mevcutFiyat": 1350
     }
   ],
   "ekMaliyetler": {
