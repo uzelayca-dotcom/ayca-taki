@@ -92,6 +92,22 @@
       "birim": "tek",
       "katsayi": 2.6521,
       "mevcutFiyat": 1650
+    },
+    {
+      "id": "kupe-zeytin-duz",
+      "isim": "Düz Zeytin Dalı Küpe",
+      "gramaj": 2,
+      "birim": "tek",
+      "katsayi": 2.6521,
+      "mevcutFiyat": 1200
+    },
+    {
+      "id": "kupe-zeytin-yay",
+      "isim": "Yay Zeytin Dalı Küpe",
+      "gramaj": 2,
+      "birim": "tek",
+      "katsayi": 2.6521,
+      "mevcutFiyat": 1200
     }
   ],
   "ekMaliyetler": {
